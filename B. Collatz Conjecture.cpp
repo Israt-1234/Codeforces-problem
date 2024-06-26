@@ -7,20 +7,31 @@ const int N=1005;
 int main()
 {
     // clock_t st= clock();
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    
     int n; cin >> n;
     while(n--){
-        ll x, y, k;
+        ll int x, y, k;
         cin >> x >> y >> k;
-        while(k>0){
-            x++;
-            while(x%y ==0){
-                x = x/y;
+        // while(k>0){
+        //     x++;
+        //     while(x%y ==0){
+        //         x = x/y;
+        //     }
+        //     k--;
+        // }
+        // cout << x << endl;
+        while(x!=1 and k>0){
+            ll int increment = y-(x%y);
+            x = x + min(increment, k);
+            k = k- min(increment, k);
+            while(x%y == 0){
+                x =x / y;
             }
-            k--;
         }
-        cout << x << endl;
+        if(x == 1){
+            x =x + k%(y-1);
+        }
+        cout << x << "\n";
     }
     return 0;
 }
