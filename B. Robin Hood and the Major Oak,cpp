@@ -1,0 +1,15 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    // Write C++ code here
+   int t; cin >> t;
+   while(t--){
+   int n, k; cin >> n >> k;
+   int ans = (k*(2*n-k+1))/2;
+    cout << (ans%2?"NO":"YES") << endl;
+   }
+    return 0;
+}
